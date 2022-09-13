@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
-import Countries from "./components/Countries";
+import Countries from "./pages/Countries";
 
 function App() {
     return (
