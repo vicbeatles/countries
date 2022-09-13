@@ -7,7 +7,7 @@ import {
   Route 
 } from "react-router-dom";
 import Layout from './components/Layout';
-import Countries  from './components/Header/Countries';
+import Countries  from './components/Countries';
 
 
 function App() {

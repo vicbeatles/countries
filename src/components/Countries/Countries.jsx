@@ -9,7 +9,10 @@ export const Countries = () => {
         <div>COUNTRIES</div>
         <div>COUNTRIES</div>
         <div>COUNTRIES</div>
+
     </div>
     
   )
 }
+
+export default Countries;
