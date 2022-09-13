@@ -1,24 +1,20 @@
-import React from 'react';
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route 
-} from "react-router-dom";
-import Layout from './components/Layout';
-import Countries  from './components/Countries';
-
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/Layout";
+import Countries from "./components/Countries";
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/countries" element={<Countries />}/>
-        </Route>
-      </Routes>
-    </Router>
-  )
+    return (
+        <Router>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path="/countries" element={<Countries />} />
+                </Route>
+                <Route path="*" element={<Navigate to="/countries" replace />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
