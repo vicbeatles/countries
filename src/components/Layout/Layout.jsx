@@ -4,11 +4,9 @@ import Header from '../Header'
 
 export const Layout = () => {
   return (
-    <React.Fragment>
+    <div>
         <Header />
-        <div className="main">
-            <Outlet />
-        </div>
-    </React.Fragment>
+        <Outlet />
+    </div>
   )
 }

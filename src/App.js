@@ -6,15 +6,15 @@ import {
   Routes,
   Route 
 } from "react-router-dom";
-import { Layout } from './components/Layout';
-import { Countries } from './components/Header/Countries/Countries';
+import Layout from './components/Layout';
+import Countries  from './components/Header/Countries';
 
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route path="/countries" element={<Countries />}/>
         </Route>
       </Routes>
