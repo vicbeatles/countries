@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+.countryData {
+
+    width: 200px;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    font-family: 'Nunito Sans', sans-serif;
+
+}
+
+
+.flag img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.flag {
+    width: 200px;
+    height: 120px;
+}
+
+.countryName {
+    font-weight: 800;
+    padding: 25px 0px;
+}
+
+.dataTitle {
+    font-weight: 800;
+}
