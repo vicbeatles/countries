@@ -6,7 +6,7 @@ const Header = (props) => {
         <div className="HeaderBar">
             <div className="header-info">
                 <div className="HeaderText"> Where in the world?</div>
-                <div><button className="DarkButton">Dark Mode</button></div>
+                <button className="DarkButton">Dark Mode</button>
             </div>
         </div>
         

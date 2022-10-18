@@ -1,6 +1,12 @@
-.countryCards {
+body {
 
+    background-color: hsl(0, 0%, 98%);
+}
+.countryCards {
+    
+    padding: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+
 }

@@ -4,6 +4,7 @@ import "./CountryCard.css"
 const CountryCard = (props) => {
     const {country} = props;
     const {name, population, capital, region, flags} = country;
+    console.log(country);
     console.log(flags)
 
     const renderCapital = () => { 
@@ -19,7 +20,7 @@ const CountryCard = (props) => {
 
   return (
     <div className='countryData'>
-        <div className='flag'><img src={flags.svg}/></div>
+        <div className='flag'><img src={flags.png}/></div>
         <div className='countryText'>
             <div className='countryName'> {name.common}</div>
             <div className='countryPopulation'><span className='dataTitle'>Population:</span> {population}</div>
