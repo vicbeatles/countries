@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./Countries.css";
 import CountryCard from "../../components/CountryCard";
+import CountrySearcher from '../../components/CountrySearcher/CountrySearcher';
 
 
 const Countries = () => {
@@ -20,13 +21,14 @@ const Countries = () => {
 
 
   return (
-    
-    
-    <div className='countryCards'>
+
+    <div>
+      <div className='search-filter'><CountrySearcher /></div>
+      <div className='countryCards'>
       {countries.length === 0 ? 'Loading...' : countries.map((country,index) => {
        return <CountryCard country={country}/>
       }) }
-    
+      </div>
     </div> 
   )
 }
