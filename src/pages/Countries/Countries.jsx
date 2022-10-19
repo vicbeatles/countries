@@ -20,7 +20,8 @@ const Countries = () => {
 
 
   return (
-
+    
+    
     <div className='countryCards'>
       {countries.length === 0 ? 'Loading...' : countries.map((country,index) => {
        return <CountryCard country={country}/>
