@@ -17,7 +17,8 @@ const getSearched = async () => {
       setCountries(data);
       
     } else {
-      setCountries([]);
+      console.log(data)
+      setCountries([data.status,data.message]);
     }
 
 

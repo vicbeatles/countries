@@ -25,9 +25,13 @@ const Countries = () => {
     <div>
       <div className='search-filter'><CountrySearcher setCountries={setCountries} /></div>
       <div className='countryCards'>
-      {countries.length === 0 ? 'Loading...' : countries.map((country,index) => {
-       return <CountryCard country={country}/>
-      }) }
+      {
+          
+        countries[0] === 404 ? 'Error' : (countries.length === 0 ? 'Loading...' : countries.map((country,index) => {
+          return <CountryCard country={country}/>
+         })) 
+
+      }
       </div>
     </div> 
   )
