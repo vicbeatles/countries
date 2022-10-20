@@ -1,14 +1,21 @@
-import React from 'react'
-import "./CountrySearcher.css"
+import React, { useEffect, useState } from 'react';
+import "./CountrySearcher.css";
 
 const CountrySearcher = () => {
+
+const [keyword,setKeyword] = useState('');
+
+
   return (
     <div className='searcher-bar'>
+        <div className='search-icon'> </div>
         <form>
-            <input type='text' placeholder='Search for a country...'></input>
+            <input value={keyword} type='search' placeholder='Search for a country...' onChange={(e) => { 
+              setKeyword(e.target.value);
+            }}></input>
         </form>
     </div>
   )
 }
 
-export default CountrySearcher
+export default CountrySearcher;
