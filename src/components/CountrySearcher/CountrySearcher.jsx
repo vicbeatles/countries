@@ -1,9 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import "./CountrySearcher.css";
 
-const CountrySearcher = () => {
+const CountrySearcher = (props) => {
+
+const {setCountries} = props;
 
 const [keyword,setKeyword] = useState('');
+
+const getSearched = async () => { 
+  
+    const response = await fetch ("https://restcountries.com/v3.1/name/" + keyword);
+    const data = await response.json();
+    
+  
+    if(Array.isArray(data)) {
+      setCountries(data);
+      
+    } else {
+      setCountries([]);
+    }
+
+
+  
+}
+
+useEffect(() => {
+  if (keyword !== '') getSearched();
+}, [keyword]);
 
 
   return (
