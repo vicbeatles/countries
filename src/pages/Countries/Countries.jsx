@@ -27,7 +27,7 @@ const Countries = () => {
       <div className='countryCards'>
       {
           
-        countries[0] === 404 ? 'Error' : (countries.length === 0 ? 'Loading...' : countries.map((country,index) => {
+        !countries ? 'Country not found. Try again.' : (countries.length === 0 ? 'Loading...' : countries.map((country,index) => {
           return <CountryCard country={country}/>
          })) 
 

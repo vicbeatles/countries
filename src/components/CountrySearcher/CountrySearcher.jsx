@@ -18,7 +18,7 @@ const getSearched = async () => {
       
     } else {
       console.log(data)
-      setCountries([data.status,data.message]);
+      setCountries(false);
     }
 
 
