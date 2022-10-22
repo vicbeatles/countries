@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./Countries.css";
 import CountryCard from "../../components/CountryCard";
 import CountrySearcher from '../../components/CountrySearcher/CountrySearcher';
-
+import FilterBy from '../../components/FilterBy/FilterBy';
 
 const Countries = () => {
 
@@ -23,7 +23,10 @@ const Countries = () => {
   return (
 
     <div>
-      <div className='search-filter'><CountrySearcher setCountries={setCountries} /></div>
+      <div className='search-filter'>
+        <CountrySearcher setCountries={setCountries} />
+        <FilterBy />
+      </div>
       <div className='countryCards'>
       {
           
