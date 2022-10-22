@@ -1,0 +1,29 @@
+.searcher-bar {
+    display: flex;
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.1);
+}
+
+.search-icon {
+    
+    background-color: #ffffff;
+    background-image: url('../../assets/icons/lupa.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height:40px;
+}
+
+input {
+    width: 250px;
+    height: 40px;
+    border: 10px;
+    
+}
+
+::placeholder {
+
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+
+}
