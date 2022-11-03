@@ -1,6 +1,6 @@
 .searcher-bar {
     display: flex;
-    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.1);
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.2);
 }
 
 .search-icon {
@@ -15,7 +15,7 @@
 }
 
 input {
-    width: 250px;
+    width: 300px;
     height: 40px;
     border: 10px;
     

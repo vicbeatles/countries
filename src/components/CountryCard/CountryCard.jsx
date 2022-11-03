@@ -4,8 +4,6 @@ import "./CountryCard.css"
 const CountryCard = (props) => {
     const {country} = props;
     const {name, population, capital, region, flags} = country;
-    console.log(country);
-    console.log(flags)
 
     const renderCapital = () => { 
         if (!capital) {
