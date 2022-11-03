@@ -6,17 +6,28 @@ import FilterBy from '../../components/FilterBy/FilterBy';
 
 const Countries = () => {
 
-  const [countries, setCountries] = useState([]);
+
+const [countries, setCountries] = useState([]);
+
+const [region, setRegion] = useState('');
+
 
   const getCountries = async () => { 
     const response = await fetch ("https://restcountries.com/v3.1/all");
     const data = await response.json();
     setCountries(data);
+  
   }
+
 
   useEffect(() => {
     getCountries();
+    
   }, []);
+
+
+  const toRender = region === '' ? countries : countries.filter(country => country.region === region);
+
 
 
 
@@ -25,13 +36,13 @@ const Countries = () => {
     <div>
       <div className='search-filter'>
         <CountrySearcher setCountries={setCountries} />
-        <FilterBy />
+        <FilterBy countries={countries} setCountries={setCountries} region={region} setRegion={setRegion}/>
       </div>
       <div className='countryCards'>
       {
           
-        !countries ? 'Country not found. Try again.' : (countries.length === 0 ? 'Loading...' : countries.map((country,index) => {
-          return <CountryCard country={country}/>
+        !toRender ? 'Country not found. Try again.' : (toRender.length === 0 ? 'Loading...' : toRender.map((country,index) => {
+          return <CountryCard country={country} key={index}/>
          })) 
 
       }
