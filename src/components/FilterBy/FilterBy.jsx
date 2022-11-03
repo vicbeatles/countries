@@ -8,7 +8,7 @@ import "./FilterBy.css";
 
 const FilterBy = (props) => {
 
-  const {countries, setCountries, region, setRegion} = props;
+  const {setRegion} = props;
 
 
 
