@@ -39,13 +39,12 @@ const [region, setRegion] = useState('');
         <FilterBy countries={countries} setCountries={setCountries} region={region} setRegion={setRegion}/>
       </div>
       <div className='countryCards'>
-      {
-          
+      {    
         !toRender ? 'Country not found. Try again.' : (toRender.length === 0 ? 'Loading...' : toRender.map((country,index) => {
           return <CountryCard country={country} key={index}/>
          })) 
-
       }
+      
       </div>
     </div> 
   )
