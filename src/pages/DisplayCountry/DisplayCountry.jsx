@@ -10,17 +10,24 @@ const DisplayCountry = () => {
 
     const getCountry = async () => { 
         const response = await fetch ("https://restcountries.com/v2/name/" + params.countryName);
-        const data = await response.json();
-        console.log(data); 
-        setCountry(data);       
+        const data = await response.json(); 
+        setCountry(data);  
+
       }
 
 
-useEffect(() => { getCountry(); }, []);
+useEffect(() => { 
+  
+  getCountry();
 
+}, []);
+ 
+let countryRender = country.length === 0 ? false : country[0];
+console.log(country);
+console.log(countryRender);
 
   return (
-    <div>DisplayCountry</div>
+    <div>{!countryRender ? 'Loading' : countryRender.name}</div>
   )
 }
 
