@@ -1,0 +1,16 @@
+.countryFlag {
+    background-color: aquamarine;
+    width: 200px;
+    height: 100px;
+}
+
+
+.countryContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.icountryData {
+    display: grid;
+}
