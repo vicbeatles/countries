@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-const BorderCountry = () => {
+const BorderCountry = (props) => {
+  const {bName} = props;
+
   return (
-    <div>BorderCountry</div>
+
+    <div> {bName} </div>
   )
 }
 
-export default BorderCountry
+export default BorderCountry;

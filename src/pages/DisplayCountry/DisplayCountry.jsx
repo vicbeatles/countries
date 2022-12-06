@@ -1,19 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import "./DisplayCountry.css";
 import { useParams } from "react-router-dom";
+import BorderCountry from '../../components/BorderCountry/BorderCountry';
 
 const DisplayCountry = () => {
 
     let params = useParams();
 
     const [country,setCountry] = useState([]);
+    const [border,setBorder] = useState([]);
+    const [firstRender,setFirstRender] = useState(true);
 
     const getCountry = async () => { 
         const response = await fetch ("https://restcountries.com/v2/name/" + params.countryName);
         const data = await response.json(); 
-        setCountry(data);  
+        setCountry(data);
+        await getBorders(data[0].borders);
+        
+      } 
 
-      }
+      const getBorders = async (bor) => { 
+    
+        const response = await fetch ("https://restcountries.com/v3.1/alpha?codes=" + bor);
+        const data = await response.json();
+        setBorder(data);
+     
+        
+        }
 
 
 useEffect(() => { 
@@ -21,10 +34,17 @@ useEffect(() => {
   getCountry();
 
 }, []);
- 
+
+
+
 let countryRender = country.length === 0 ? false : country[0];
-console.log(country);
-console.log(countryRender);
+let countryBorders = border.length === 0 ? false : border;
+let countryBordersC = !countryBorders ? false : countryBorders.map((obj)=> {
+  return obj.name.common;
+});
+
+/* console.log(country);
+console.log(countryRender); */
 let countryLang = !countryRender ? 'Loading languages' : countryRender.languages.map((array)=> {return array.name});
 
   return (
@@ -45,9 +65,9 @@ let countryLang = !countryRender ? 'Loading languages' : countryRender.languages
             <div className="icountryChar">{!countryRender ? 'Loading' : countryLang.join(', ')}</div>
           </div>
           <div className='icountryBorder'>
-              <div className='iCountryTitle'>Border Countries:</div>
-              {}    
-
+              <div className='iCountryTitle'>Border Countries: {!countryBordersC ? 'Loading borders' : countryBordersC.map((bName,index)=> {
+                return <BorderCountry bName={bName} key={index} />
+              })} </div>
           </div>         
         </div>
         
