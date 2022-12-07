@@ -1,16 +1,119 @@
-.countryFlag {
-    background-color: aquamarine;
-    width: 200px;
-    height: 100px;
+.DisplayContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    height: 90vh;
+    row-gap: 25%;
+    font-family: 'Nunito Sans', sans-serif;
+
+}
+
+.BackButtonContainer {
+
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.3);
+    width: 130px;
+    padding: 5px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.ArrowButton {
+    width: 25px;
+    background-image: url('../../assets/icons/flecha-izquierda.png');
+    background-position: center;
+    background-size: cover;
 }
 
 
 .countryContainer {
     display: flex;
     justify-content: space-around;
+    justify-self: end;
 }
 
+.countryFlag {
+    width: 550px;
+
+}
+.countryFlag img {
+
+    width: 100%;
+
+}
 
 .icountryData {
+
+    width: 550px;
     display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "name name"
+        "data1 data2"
+        "borders borders";
+
+    
 }
+
+.icountryName {
+
+    font-size: 40px;
+    font-weight: 800;
+    grid-area: name;
+
+}
+
+.icountryCharTable1 {
+
+    grid-area: data1;
+    font-weight: 600;
+
+}
+
+.icountryCharTable1 span {
+
+    font-weight: 800;
+
+}
+
+.icountryCharTable2 {
+
+    grid-area: data2;
+    font-weight: 600;
+
+}
+
+.icountryCharTable2 span {
+
+    font-weight: 800;
+
+}
+
+.icountryChar {
+    padding: 2px 0px;
+}
+
+
+.icountryBorder span {
+
+    font-weight: 800;
+
+}
+
+.icountryBorder {
+
+    grid-area: borders;
+
+}
+ 
+.iCountryBorderNames {
+
+    padding-top: 20px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+   }
