@@ -21,7 +21,7 @@ const CountryCard = (props) => {
         <div className='flag'><img src={flags.png}/></div>
         <div className='countryText'>
             <div className='countryName'> {name.common}</div>
-            <div className='countryPopulation'><span className='dataTitle'>Population:</span> {population}</div>
+            <div className='countryPopulation'><span className='dataTitle'>Population:</span> {population.toLocaleString('en')}</div>
             <div className='countryRegion'><span className='dataTitle'>Region:</span> {region}</div>
             <div className='countryCapital'><span className='dataTitle'>Capital:</span>  {renderCapital()} </div>
         </div>
