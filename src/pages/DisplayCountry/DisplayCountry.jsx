@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import "./DisplayCountry.css";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 import BorderCountry from '../../components/BorderCountry/BorderCountry';
 
 const DisplayCountry = () => {
 
     let params = useParams();
 
+    const navigate = useNavigate();
     const [country,setCountry] = useState([]);
     const [border,setBorder] = useState([]);
     const [firstRender,setFirstRender] = useState(true);
 
     const getCountry = async () => { 
+      
         const response = await fetch ("https://restcountries.com/v2/name/" + params.countryName);
         const data = await response.json(); 
         setCountry(data);
@@ -46,7 +48,7 @@ let countryLang = !countryRender ? 'Loading languages' : countryRender.languages
 
   return (
       <div className='DisplayContainer'>
-      <div className='BackButtonContainer'><div className='ArrowButton'></div><div>Back</div></div>
+      <div className='BackButtonContainer'><button onClick={()=> {navigate('/countries')}}><div className='ArrowButton'></div><div>Back</div></button></div>
       <div className='countryContainer'>
         <div className='countryFlag'><img src={countryRender.flag} /></div>
         <div className='icountryData'>

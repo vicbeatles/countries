@@ -17,6 +17,11 @@
 
 }
 
+.countryData button {
+
+    background: none;
+    border: none;
+}
 
 .flag img {
 
