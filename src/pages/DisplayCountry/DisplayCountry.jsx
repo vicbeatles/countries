@@ -20,14 +20,12 @@ const DisplayCountry = () => {
       } 
 
       const getBorders = async (bor) => { 
-    
-        const response = await fetch ("https://restcountries.com/v3.1/alpha?codes=" + bor);
-        const data = await response.json();
-        setBorder(data);
-     
-        
-        }
+  
+          const response = await fetch ("https://restcountries.com/v3.1/alpha?codes=" + bor);
+          const data = await response.json();
+          setBorder(data);
 
+        }
 
 useEffect(() => { 
   
@@ -37,14 +35,13 @@ useEffect(() => {
 
 
 let countryRender = country.length === 0 ? false : country[0];
-let countryBorders = border.length === 0 ? false : border;
-let countryBordersC = !countryBorders ? false : countryBorders.map((obj)=> {
-  return obj.name.common;
-});
 
-console.log(countryRender)
-/* console.log(country);
-console.log(countryRender); */
+let countryBorders = Array.isArray(border) ? (border.length === 0 ? false : border) : border.status
+let countryBordersC = countryBorders === 400 ? 'No borders' : (border.length === 0 ? false : countryBorders.map((obj)=> {
+  return obj.name.common; 
+}))
+
+
 let countryLang = !countryRender ? 'Loading languages' : countryRender.languages.map((array)=> {return array.name});
 
   return (
@@ -67,9 +64,9 @@ let countryLang = !countryRender ? 'Loading languages' : countryRender.languages
             <div className="icountryChar"><span>Languages: </span>{!countryRender ? 'Loading' : countryLang.join(', ')}</div>
           </div>
           <div className='icountryBorder'>
-              <div className='iCountryBorderNames'><span>Border Countries: </span>{!countryBordersC ? 'Loading borders' : countryBordersC.map((bName,index)=> {
+              <div className='iCountryBorderNames'><span>Border Countries: </span>{countryBordersC  === 'No borders' ? <BorderCountry bName={'No borders'} /> : (!countryBordersC ? 'Loading borders' : countryBordersC.map((bName,index)=> {
                 return <BorderCountry bName={bName} key={index} />
-              })} </div>
+              }))} </div>
           </div>         
         </div>
         

@@ -1,9 +1,13 @@
 import React from 'react';
+import { Navigate, useNavigate } from "react-router-dom";
 import "./CountryCard.css"
 
 const CountryCard = (props) => {
+
+    const navigate = useNavigate();
     const {country} = props;
     const {name, population, capital, region, flags} = country;
+    console.log(country)
 
     const renderCapital = () => { 
         if (!capital) {
@@ -18,6 +22,7 @@ const CountryCard = (props) => {
 
   return (
     <div className='countryData'>
+        <button onClick={()=>{navigate('/countries/' + country.name.common)}}>
         <div className='flag'><img src={flags.png}/></div>
         <div className='countryText'>
             <div className='countryName'> {name.common}</div>
@@ -25,7 +30,7 @@ const CountryCard = (props) => {
             <div className='countryRegion'><span className='dataTitle'>Region:</span> {region}</div>
             <div className='countryCapital'><span className='dataTitle'>Capital:</span>  {renderCapital()} </div>
         </div>
-
+        </button>
     </div>
   )
 }
