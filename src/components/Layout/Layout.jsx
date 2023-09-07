@@ -2,7 +2,9 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
 
-export const Layout = () => {
+export const Layout = (props) => {
+
+
   return (
     <div>
         <Header />

@@ -40,7 +40,7 @@ const [region, setRegion] = useState('');
       </div>
       <div className='countryCards'>
       {    
-        !toRender ? 'Country not found. Try again.' : (toRender.length === 0 ? 'Loading...' : toRender.map((country,index) => {
+        !toRender ? 'Countries not found. Try again.' : (toRender.length === 0 ? 'Loading...' : toRender.map((country,index) => {
           return <CountryCard country={country} key={index}/>
          })) 
       }

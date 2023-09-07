@@ -16,6 +16,7 @@ const DisplayCountry = () => {
       
         const response = await fetch ("https://restcountries.com/v2/name/" + params.countryName);
         const data = await response.json(); 
+        console.log(data[0].borders)
         setCountry(data);
         await getBorders(data[0].borders);
         
@@ -25,6 +26,7 @@ const DisplayCountry = () => {
   
           const response = await fetch ("https://restcountries.com/v3.1/alpha?codes=" + bor);
           const data = await response.json();
+          console.log(data)
           setBorder(data);
 
         }
@@ -37,6 +39,7 @@ useEffect(() => {
 
 
 let countryRender = country.length === 0 ? false : country[0];
+console.log(country)
 
 let countryBorders = Array.isArray(border) ? (border.length === 0 ? false : border) : border.status
 let countryBordersC = countryBorders === 400 ? 'No borders' : (border.length === 0 ? false : countryBorders.map((obj)=> {

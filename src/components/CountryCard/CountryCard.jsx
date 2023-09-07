@@ -7,7 +7,6 @@ const CountryCard = (props) => {
     const navigate = useNavigate();
     const {country} = props;
     const {name, population, capital, region, flags} = country;
-    console.log(country)
 
     const renderCapital = () => { 
         if (!capital) {
