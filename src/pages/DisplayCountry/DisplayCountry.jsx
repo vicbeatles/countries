@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./DisplayCountry.css";
 import { useParams, Navigate, useNavigate } from "react-router-dom";
 import BorderCountry from '../../components/BorderCountry/BorderCountry';
+import { ThemeContext } from '../../context/ThemeProvider';
 
 const DisplayCountry = () => {
 
@@ -11,6 +12,7 @@ const DisplayCountry = () => {
     const [country,setCountry] = useState([]);
     const [border,setBorder] = useState([]);
     const [firstRender,setFirstRender] = useState(true);
+    const { theme } = useContext(ThemeContext);
 
     const getCountry = async () => { 
       
@@ -50,8 +52,8 @@ let countryBordersC = countryBorders === 400 ? 'No borders' : (border.length ===
 let countryLang = !countryRender ? 'Loading languages' : countryRender.languages.map((array)=> {return array.name});
 
   return (
-      <div className='DisplayContainer'>
-      <div className='BackButtonContainer'><button onClick={()=> {navigate('/countries')}}><div className='ArrowButton'></div><div>Back</div></button></div>
+      <div className={theme == 'light' ? 'DisplayContainer' : 'DisplayContainer-dark'}>
+      <div className={theme == 'light' ? 'BackButtonContainer' : 'BackButtonContainer-dark'}><button onClick={()=> {navigate('/countries')}}><div className='ArrowButton'></div><div>Back</div></button></div>
       <div className='countryContainer'>
         <div className='countryFlag'><img src={countryRender.flag} /></div>
         <div className='icountryData'>
