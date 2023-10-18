@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "./CountrySearcher.css";
+import { ThemeContext } from '../../context/ThemeProvider';
+
 
 const CountrySearcher = (props) => {
+
+const { theme } = useContext(ThemeContext);
 
 const {setCountries} = props;
 
@@ -31,8 +35,8 @@ useEffect(() => {
 
 
   return (
-    <div className='searcher-bar'>
-        <div className='search-icon'> </div>
+    <div className={theme == 'light' ? 'searcher-bar' : 'searcher-bar-dark'}>
+        <div className={theme == 'light' ? 'search-icon' : 'search-icon-dark'}><div className={theme == 'light' ? 'search-icon-image' : 'search-icon-image-dark'}></div></div>
         <form>
             <input value={keyword} type='search' placeholder='Search for a country...' onChange={(e) => { 
               setKeyword(e.target.value);

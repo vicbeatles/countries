@@ -28,3 +28,37 @@
     max-width: 150px;
     box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.2);
 }
+
+
+
+#dropdown-basic-button-dark {
+    
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+    width: 150px;
+    height: 40px;
+    border: 10px;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.2);
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dropdown-item {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    
+    
+}
+
+.dropdown-menu-dark {
+
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+    border: none;
+    min-width: 150px;
+    max-width: 150px;
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.2);
+}
